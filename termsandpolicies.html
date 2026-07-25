@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melody Hub | Terms & Policies</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* Root colors and theme */
+:root {
+  --dark-bg: #0e0e0e;
+  --panel-bg: #111;
+  --accent: #00ff95;
+  --accent-hover: #00d57e;
+  --text-grey: #e4e4e4;
+  --border-soft: rgba(0, 255, 149, 0.4);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: var(--dark-bg);
+  color: var(--text-grey);
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Header */
+.page-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* Content */
+.policy-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--panel-bg);
+  padding: 30px 25px;
+  border-radius: 16px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 18px rgba(0, 255, 149, 0.2);
+}
+
+.policy-content h2 {
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.policy-content p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* Back Home link */
+.home-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--accent);
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .policy-content {
+    padding: 20px 15px;
+  }
+  .page-title {
+    font-size: 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-title">Terms & Policies</div>
+
+  <div class="policy-content">
+    <h2>1. Introduction</h2>
+    <p>Welcome to Melody Hub! By accessing or using our website, you agree to comply with and be bound by the following terms and policies.</p>
+
+    <h2>2. Use of Service</h2>
+    <p>Melody Hub provides music streaming services for personal, non-commercial use only. You may not copy, distribute, or reproduce any content without permission.</p>
+
+    <h2>3. Account</h2>
+    <p>Users must register an account to access certain features. You are responsible for maintaining the confidentiality of your login details and for all activities under your account.</p>
+
+    <h2>4. Privacy</h2>
+    <p>We value your privacy. Please review our <a href="privacy.html" style="color: var(--accent)">Privacy Policy</a> to understand how we collect and use your data.</p>
+
+    <h2>5. Content</h2>
+    <p>All music, images, logos, and text on Melody Hub are protected by copyright. Unauthorized use of any content is strictly prohibited.</p>
+
+    <h2>6. Termination</h2>
+    <p>We reserve the right to suspend or terminate your account if you violate our terms or misuse the service.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>Melody Hub is not liable for any damages resulting from the use or inability to use the service. Use at your own risk.</p>
+
+    <h2>8. Changes to Terms</h2>
+    <p>We may update these terms from time to time. Continued use of Melody Hub constitutes acceptance of any changes.</p>
+
+    <a href="home.html" class="home-link">← Back to Home</a>
+  </div>
+</div>
+<script>
+// Smooth back transition
+document.getElementById("backHome").addEventListener("click", function(e){
+  e.preventDefault();
+  const container = document.querySelector(".container");
+  container.style.opacity = 0;
+  container.style.transform = "translateY(20px)";
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 1000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Hub – Services & Features</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Open+Sans:ital,wght@0,300..800&display=swap");
+
+        :root {
+            --bg-dark: #0e0e0e;
+            --panel-dark: #111;
+            --accent: #00ff95;
+            --accent-hover: #00d57e;
+            --text-grey: #e4e4e4;
+            --border-soft: rgba(0, 255, 149, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-grey);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: var(--panel-dark);
+            align-items: center;
+        }
+
+        .header h1 {
+            color: var(--accent);
+        }
+
+        .buttons .sign, .buttons .log {
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .buttons .sign {
+            background-color: #222;
+            color: var(--text-grey);
+        }
+
+        .buttons .sign:hover {
+            background-color: var(--accent);
+            color: #000;
+        }
+
+        .buttons .log {
+            background-color: var(--accent);
+            color: #000;
+        }
+
+        .buttons .log:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .spotify-playlist h1 {
+            text-align: center;
+            color: var(--accent);
+            padding: 25px 0;
+            text-shadow: 0 0 6px var(--accent);
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: var(--panel-dark);
+            width: 280px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 149, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-grey);
+            line-height: 1.5;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--panel-dark);
+            padding: 20px;
+            color: var(--text-grey);
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .footer-left a {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-grey);
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .footer-left a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 5px var(--accent);
+        }
+
+        .footer-logo {
+            width: 80px;
+            filter: drop-shadow(0 0 6px var(--accent));
+        }
+
+        @media (max-width: 800px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h1>Melody Hub</h1>
+    <div class="buttons">
+        <button class="sign" id="signupBtn">Sign Up</button>
+        <button class="log" id="loginBtn">Log In</button>
+    </div>
+</div>
+
+<!-- Page Title -->
+<div class="spotify-playlist">
+    <h1>Our Services & Features</h1>
+</div>
+
+<!-- Services Cards -->
+<div class="card-container">
+    <div class="card">
+        <h3>Unlimited Music Streaming</h3>
+        <p>Listen to millions of songs across all genres anytime, anywhere without interruptions.</p>
+    </div>
+
+    <div class="card">
+        <h3>Curated Playlists</h3>
+        <p>Discover playlists for every mood, activity, or genre, handpicked by music experts.</p>
+    </div>
+
+    <div class="card">
+        <h3>Offline Mode</h3>
+        <p>Download your favorite tracks and enjoy music offline without using data.</p>
+    </div>
+
+    <div class="card">
+        <h3>Personalized Recommendations</h3>
+        <p>Get suggestions for songs, albums, and playlists based on your listening habits.</p>
+    </div>
+
+    <div class="card">
+        <h3>High-Quality Audio</h3>
+        <p>Enjoy crystal-clear sound quality with options for high-fidelity streaming.</p>
+    </div>
+
+    <div class="card">
+        <h3>Share Your Music</h3>
+        <p>Share your favorite songs and playlists with friends easily on social media.</p>
+    </div>
+
+    <div class="card">
+        <h3>Podcasts & Radio</h3>
+        <p>Listen to a variety of podcasts and live radio channels alongside your favorite music.</p>
+    </div>
+
+    <div class="card">
+        <h3>Custom Playlists</h3>
+        <p>Create your own playlists and organize your favorite songs however you like.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-left">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <img src="images/logo.svg" alt="Melody Hub Logo" class="footer-logo">
+</div>
+
+<!-- JavaScript for button actions -->
+<script>
+    document.getElementById("signupBtn").addEventListener("click", function() {
+        window.location.href = "signup.html"; // Replace with your actual signup page
+    });
+
+    document.getElementById("loginBtn").addEventListener("click", function() {
+        window.location.href = "login.html"; // Replace with your actual login page
+    });
+</script>
+
+</body>
+</html>

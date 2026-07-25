@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melody Hub | Feedback</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* Root colors and theme */
+:root {
+  --dark-bg: #0e0e0e;
+  --panel-bg: #111;
+  --accent: #00ff95;
+  --accent-hover: #00d57e;
+  --text-grey: #e4e4e4;
+  --border-soft: rgba(0, 255, 149, 0.4);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: var(--dark-bg);
+  color: var(--text-grey);
+  overflow-x: hidden;
+}
+
+/* Smooth fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Full-page container */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.5s ease;
+}
+
+/* Left Panel */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--accent);
+  box-shadow: 0 0 20px rgba(0,255,149,0.15);
+}
+
+/* Logo and App Name */
+.logo {
+  width: 160px;
+  filter: drop-shadow(0 0 12px var(--accent));
+  margin-bottom: 18px;
+}
+
+.app-name {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  background: var(--panel-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-form {
+  width: 100%;
+  max-width: 450px;
+  background: #0a0a0a;
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 18px rgba(0, 255, 149, 0.2);
+}
+
+.feedback-form h2 {
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 32px;
+  text-shadow: 0 0 8px var(--accent);
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: #0d0d0d;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0,255,149,0.3);
+  resize: none;
+}
+
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+  color: #bfbfbf;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0,255,149,0.6);
+}
+
+/* Button */
+.feedback-form button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.feedback-form button:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* Back Home link */
+.home-link {
+  display: block;
+  margin-top: 18px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .container { flex-direction: column; }
+  .left-panel {
+    width: 100%;
+    height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid var(--accent);
+  }
+  .right-panel {
+    height: 65vh;
+  }
+  .logo { width: 120px; }
+  .app-name { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container fade-in">
+
+  <div class="left-panel">
+    <img src="./images/logo.svg" class="logo" alt="Melody Hub Logo">
+    <div class="app-name">Melody Hub</div>
+  </div>
+
+  <div class="right-panel">
+    <div class="feedback-form fade-in">
+      <h2>Feedback</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea rows="5" placeholder="Your Feedback" required></textarea>
+        <button type="submit">Submit Feedback</button>
+      </form>
+      <a class="home-link" id="backHome">← Go Back to Home</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Smooth back transition
+document.getElementById("backHome").addEventListener("click", function(e){
+  e.preventDefault();
+  const container = document.querySelector(".container");
+  container.style.opacity = 0;
+  container.style.transform = "translateY(20px)";
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 400);
+});
+</script>
+
+</body>
+</html>
