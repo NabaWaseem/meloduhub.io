@@ -1,4 +1,4 @@
-# Spotify Web App
+# Melody Hub app
 
 A simple web application built to interact with the Spotify API, allowing users to search for tracks, view playlists, or play music directly in the browser. Hosted on GitHub Pages at [https://nabawaseem.github.io/spotifyapp/](https://nabawaseem.github.io/spotifyapp.github.io/).
 
